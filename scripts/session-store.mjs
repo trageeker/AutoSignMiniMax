@@ -7,6 +7,11 @@ import sodium from 'libsodium-wrappers';
 // schedule and must not drive expiry warnings.
 const AUTH_NAME_RE = /(token|auth|session|sess|sid|jwt|login|access|refresh|credential|passport)/i;
 const JWT_RE = /^[\w-]+\.[\w-]+\.[\w-]+$/;
+// Ad/analytics/bot-defence cookies whose names happen to contain "sid" or
+// "session" (e.g. Bing UET `_uetsid`, a 1-day ad session id). They are not
+// part of the MiniMax login and must never trigger an expiry warning.
+const NON_AUTH_NAME_RE = /^(_uet|_ga|_gcl|_tw|_rdt|_fbp|_fbc|_clck|_clsk|sajssdk|sensorsdata|ak_bmsc|bm_|_abck|__cf_bm|_cfuvid|MUID|MR$|IDE$|muc_ads|guest_id|personalization_id)/i;
+const isAuthName = (name) => AUTH_NAME_RE.test(name) && !NON_AUTH_NAME_RE.test(name);
 
 /**
  * Decode a JWT payload without verifying it — we only want `exp`.
@@ -56,7 +61,7 @@ export function inspectSession(state, now = Date.now()) {
   const candidates = [];
 
   for (const cookie of cookies) {
-    if (!AUTH_NAME_RE.test(cookie?.name ?? '')) continue;
+    if (!isAuthName(cookie?.name ?? '')) continue;
     // Playwright uses -1 for session cookies; they die with the browser, not on a date.
     if (typeof cookie.expires !== 'number' || cookie.expires <= 0) continue;
     candidates.push({ source: `cookie:${cookie.name}`, expires: cookie.expires });
@@ -127,7 +132,7 @@ function authCookieNames(state) {
   return new Set(
     (Array.isArray(state?.cookies) ? state.cookies : [])
       .map((c) => c?.name)
-      .filter((name) => typeof name === 'string' && AUTH_NAME_RE.test(name)),
+      .filter((name) => typeof name === 'string' && isAuthName(name)),
   );
 }
 
