@@ -21,7 +21,7 @@ permissions:
 jobs:
   validate-storage-states:
     name: Validate account session states
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 2
     env:
       MINIMAX_STORAGE_STATE_B64_1: ${{ secrets.MINIMAX_STORAGE_STATE_B64_1 }}
@@ -123,7 +123,7 @@ jobs:
 
   random_start:
     name: Choose a random scheduled start time
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 70
     outputs:
       account_delays: ${{ steps.schedule.outputs.account_delays }}
@@ -153,7 +153,7 @@ jobs:
   check-in:
     name: check-in (${{ matrix.account }}) - ${{ vars[format('MINIMAX_ACCOUNT_NAME_{0}', matrix.account)] || (matrix.account == 1 && 'huang1988pioneer' || matrix.account == 2 && 'abuhg17' || matrix.account == 3 && 'goldshoot0720' || matrix.account == 4 && 'chbondg2' || matrix.account == 5 && 'feng33feng35feng3' || matrix.account == 6 && 'fengtuprinfo' || format('account-{0}', matrix.account)) }}
     needs: [random_start, validate-storage-states]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     strategy:
       fail-fast: false
@@ -234,7 +234,7 @@ jobs:
     name: daily-summary
     needs: check-in
     if: always()
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 5
     permissions:
       contents: write
