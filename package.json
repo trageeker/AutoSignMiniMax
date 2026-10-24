@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "claim": "node scripts/claim-daily-check-in.mjs",
-    "check": "node --check scripts/claim-daily-check-in.mjs && node --check scripts/minimax-signin.mjs && node --check scripts/session-store.mjs && node --check scripts/summarize-checkin-results.mjs && node --check scripts/streaks.mjs",
-    "test": "node --test scripts/streaks.test.mjs scripts/minimax-signin.test.mjs scripts/session-store.test.mjs",
-    "summary": "node scripts/summarize-checkin-results.mjs"
+    "check": "node --check scripts/claim-daily-check-in.mjs && node --check scripts/minimax-signin.mjs && node --check scripts/session-store.mjs && node --check scripts/summarize-checkin-results.mjs && node --check scripts/streaks.mjs && node --check scripts/notify-ntfy.mjs",
+    "test": "node --test scripts/streaks.test.mjs scripts/minimax-signin.test.mjs scripts/session-store.test.mjs scripts/notify-ntfy.test.mjs",
+    "summary": "node scripts/summarize-checkin-results.mjs",
+    "notify": "node scripts/notify-ntfy.mjs"
   },
   "devDependencies": {
     "playwright": "1.55.0"

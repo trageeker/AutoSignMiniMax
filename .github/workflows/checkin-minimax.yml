@@ -289,6 +289,17 @@ jobs:
             git -C "$RUNNER_TEMP/minimax-result" push origin HEAD:refs/heads/result
           fi
 
+      - name: Send ntfy notification
+        if: always()
+        env:
+          MINIMAX_SUMMARY_DIR: artifacts
+          NTFY_URL: ${{ vars.NTFY_URL || 'https://ntfy.trageek.com' }}
+          NTFY_TOPIC: ${{ vars.NTFY_TOPIC || 'idkbungle' }}
+          NTFY_USER: ${{ vars.NTFY_USER || 'agent' }}
+          NTFY_PASSWORD: ${{ secrets.NTFY_PASSWORD }}
+          NTFY_NOTIFY_ALREADY: ${{ github.event_name == 'workflow_dispatch' }}
+        run: npm run notify
+
       - name: Upload daily report
         if: always()
         uses: actions/upload-artifact@v4
