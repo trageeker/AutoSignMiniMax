@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-25T23:00:04.686Z",
-  "runUrl": "https://github.com/trageeker/AutoSignMiniMax/actions/runs/40242413068",
+  "generatedAt": "2026-10-26T04:16:08.556Z",
+  "runUrl": "https://github.com/trageeker/AutoSignMiniMax/actions/runs/40263330868",
   "title": "MiniMax Code daily check-in results",
   "accounts": [
     {
@@ -15,10 +15,10 @@
         "2026-10-25",
         "2026-10-26"
       ],
-      "currentPoints": 1153.02,
-      "remainingCredits": 1153.02,
-      "siteStreak": 2,
-      "finishedAt": "2026-10-25T22:59:53.242Z"
+      "currentPoints": 1553.02,
+      "remainingCredits": 1553.02,
+      "siteStreak": 3,
+      "finishedAt": "2026-10-26T04:15:51.711Z"
     },
     {
       "account": 2,
