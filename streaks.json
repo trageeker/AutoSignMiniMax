@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-30T11:57:56.139Z",
-  "runUrl": "https://github.com/trageeker/AutoSignMiniMax/actions/runs/41045598846",
+  "generatedAt": "2026-10-30T18:30:20.011Z",
+  "runUrl": "https://github.com/trageeker/AutoSignMiniMax/actions/runs/41105946591",
   "title": "MiniMax Code daily check-in results",
   "accounts": [
     {
@@ -8,8 +8,8 @@
       "name": "huang1988pioneer",
       "label": "huang1988pioneer",
       "status": "checked_in",
-      "streak": 7,
-      "lastCheckInDate": "2026-10-30",
+      "streak": 8,
+      "lastCheckInDate": "2026-10-31",
       "checkInDates": [
         "2026-10-24",
         "2026-10-25",
@@ -17,12 +17,13 @@
         "2026-10-27",
         "2026-10-28",
         "2026-10-29",
-        "2026-10-30"
+        "2026-10-30",
+        "2026-10-31"
       ],
       "currentPoints": 4353.02,
       "remainingCredits": 4353.02,
       "siteStreak": 7,
-      "finishedAt": "2026-10-30T11:57:39.819Z"
+      "finishedAt": "2026-10-30T18:30:02.520Z"
     },
     {
       "account": 2,
@@ -445,7 +446,7 @@
   "streakSource": "recorded_check_ins",
   "summary": {
     "recorded": 33,
-    "max": 7,
+    "max": 8,
     "min": 0,
     "average": 0.2
   }
