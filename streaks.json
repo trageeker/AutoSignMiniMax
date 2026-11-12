@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-11-11T20:16:00.586Z",
-  "runUrl": "https://github.com/trageeker/AutoSignMiniMax/actions/runs/43091634298",
+  "generatedAt": "2026-11-12T02:06:37.489Z",
+  "runUrl": "https://github.com/trageeker/AutoSignMiniMax/actions/runs/43138750137",
   "title": "MiniMax Code daily check-in results",
   "accounts": [
     {
       "account": 1,
       "name": "huang1988pioneer",
       "label": "huang1988pioneer",
-      "status": "checked_in",
+      "status": "failed",
       "streak": 20,
       "lastCheckInDate": "2026-11-12",
       "checkInDates": [
@@ -35,7 +35,7 @@
       "currentPoints": 10953.02,
       "remainingCredits": 10953.02,
       "siteStreak": 5,
-      "finishedAt": "2026-11-11T20:15:24.331Z"
+      "finishedAt": "2026-11-12T02:06:23.540Z"
     },
     {
       "account": 2,
